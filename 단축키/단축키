@@ -1,0 +1,10 @@
+Ctrl + K + C : 주석
+Ctrl + K + U : 주석 해체
+Ctrl + K + W : 열린 창 모두 닫기
+Ctrl + B : 옆 창 여닫기
+Alt + B : 실행
+Ctrl + Alt + 방향키 : 커서 복사
+Ctrl + shift + K : 한줄 삭제
+Ctrl + shift + 방향키 : 단어 단위로 커서를 이동하면서 선택
+Ctrl + D : 단어 단위 선택
+Ctrl + shift + L : 커서에 해당하는 문자열 모두 선택

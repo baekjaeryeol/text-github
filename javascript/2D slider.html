@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        .slider {
+            width: 400px;
+            margin: auto;
+        }
+        .wrap {
+            position: relative;
+        }
+        .item {
+            width: 400px;
+            height: 240px;
+            position: absolute; /* 모든 요소가 같은 위치에 겹쳐진다 */
+            background-position: center;
+            background-size: auto 100%;
+            background-repeat: no-repeat;
+            transition-duration: 0.5s;
+            /* overflow: hidden; */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>silder3</h1>
+    <hr>
+
+    <div class="slider">
+        <div class="wrap" data-index="0">
+            <div class="item" style="background-image: url(../img/강아지.jpeg)"></div>
+            <div class="item" style="background-image: url(../img/고양이.jpeg)"></div>
+            <div class="item" style="background-image: url(../img/풍경.jpeg)"></div>
+            <div class="item" style="background-image: url(../img/꽃.jpeg)"></div>
+            <div class="item" style="background-image: url(../img/토토로.jpeg)"></div>
+            <div class="item" style="background-image: url(../img/검.jpeg)"></div>
+            <div class="item" style="background-image: url(../img/무도.gif)"></div>
+            <div class="item" style="background-image: url(../img/무도2.gif)"></div>
+            <div class="item" style="background-image: url(../img/박명수.gif)"></div>
+            
+        </div>
+    </div>
+
+    <script>
+        const slider = document.querySelector('.slider')
+        const wrap = document.querySelector('.wrap')
+        const itemList = document.querySelectorAll('.item')
+
+        function abs(num) {
+            return num >= 0 ? num : -num
+        }
+
+        function detail(index) {
+            
+            let arr = [index - 2, index - 1, index, index + 1, index + 2]
+            arr = arr.map(num => num < 0 ? abs(itemList.length + num) : num)
+            arr = arr.map(num => num > itemList.length - 1 ? abs(itemList.length - num) : num)
+            console.log(arr)
+            const arr2 = arr.map(num => itemList[num])
+
+            arr2[0].style.transform = 'translateX(-300px) scale(60%)'   // 왼쪽 2칸     scale을 지우면 2D
+            arr2[1].style.transform = 'translateX(-200px) scale(80%)'   // 왼쪽 1칸
+            arr2[2].style.transform = 'translateX(0px) scale(100%)'     // 중앙
+            arr2[3].style.transform = 'translateX(200px) scale(80%)'    // 오른쪽 1칸
+            arr2[4].style.transform = 'translateX(-300px) scale(60%)'   // 오른쪽 2칸
+
+            arr2[0].style.zIndex = -2
+            arr2[1].style.zIndex = -1
+            arr2[2].style.zIndex = 0
+            arr2[3].style.zIndex = -1
+            arr2[4].style.zIndex = -2
+
+            arr2[0].style.opacity = 0
+            arr2[1].style.opacity = 0.6
+            arr2[2].style.opacity = 1
+            arr2[3].style.opacity = 0.6
+            arr2[4].style.opacity = 0
+        }
+
+        function slide() {
+            const wrap = document.querySelector('.wrap')
+            let index = +wrap.dataset.index + 1
+
+            if(index > wrap.children.length - 1)
+                index = 0
+            wrap.dataset.index = index
+            detail(index)
+        }
+        itemList.forEach(item => slide()) // 각각을 item이라고 할때 slide 함수 호출
+        // 보여주기 전에 미리 한바퀴 돌린다
+
+        setInterval(slide, 1000)
+    </script>
+</body>
+</html>

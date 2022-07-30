@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .login_menu{
+            display: flex;
+            border: 1px dashed red;
+            /* justify-content: center;
+            align-items: center; */
+        }
+        .login_logo{
+            border: 1px dashed red;
+            justify-content: center;
+            align-items: center;
+            margin-left: 130px;
+        }
+        .login_allmenu{
+            display: flex;
+            border: 1px dashed red;
+            width: 482px;
+            height: 722px;
+            justify-content: center;
+            align-items: center;
+        }
+        .login_login > input{
+            all: unset;
+            width: 400px;
+            padding: 15px;
+            border: none;
+            border-bottom: 2px solid #f6f6f6;
+            font-size: 15px;
+            font-weight: bold;
+            font-family:'굴림';
+            color: #8e8e8e;
+        }
+        .login_login > input:hover{
+            border-bottom: 2px solid red;
+        }
+
+        .login_center{
+            border: 1px dashed red;
+            width: 430px;
+            height: 500px;
+            margin: auto;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .login_button1 > a > button{
+            background-color: red;
+		    color: white;
+		    width: 430px;
+		    height: 50px;
+		    line-height: 30px;
+		    cursor: pointer;
+		    font-weight: bold;
+            border: red 1px solid;
+            font-size: 15px;
+            
+        }
+        .login_find{
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 10px 5px 5px;
+            font-size: 14px;
+        }
+
+        .login_find > .login_find_right > a{
+            text-decoration: none;
+        }
+        .login_button1 {
+            margin: 10px 0px 10px 0px;
+        }
+        .login_joinbutton > a > button{
+            background-color: white;
+		    color: black;
+		    width: 430px;
+		    height: 50px;
+		    line-height: 30px;
+		    cursor: pointer;
+		    font-weight: bold;
+            border: #f6f6f6 2px solid;
+            font-size: 15px;
+        }
+        .login_button2{
+            display: flex;
+            justify-content: space-around;
+        }
+        .login_button2 > .login_button2_naver > a > button{
+            background-color: white;
+		    color: black;
+		    width: 200px;
+		    height: 60px;
+		    line-height: 80px;
+		    cursor: pointer;
+		    font-weight: bold;
+            border: #f6f6f6 2px solid;
+            font-size: 12px;
+            padding: 0px 15px;
+        }
+        .login_button2 > .login_button2_kakao > a > button{
+            background-color: white;
+		    color: black;
+		    width: 200px;
+		    height: 60px;
+		    line-height: 80px;
+		    cursor: pointer;
+		    font-weight: bold;
+            border: #f6f6f6 2px solid;
+            font-size: 12px;
+            padding: 0px 15px;
+        }
+        .login_nologin{
+            display: flex;
+            justify-content: center;
+            margin: 10px 0px 10px 0px;
+        }
+        .login_nologin > a{
+            text-decoration: none;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="login_menu">
+        
+        <div class="login_center">
+            
+                <form>
+                    <div class="login_logo">
+                        <a href="#"><img src="oneplus.png" width="160px" height="40px"></a>
+                    </div>
+                    <div class="login_login">
+                        <input type="text" name="id" placeholder="아이디"><br>
+                        <input type="password" name="pw" placeholder="비밀번호 (대/소문자구분)"><br>
+                    </div>
+                <div class="login_find">
+                    <div class="login_find_left">
+                        <input type="checkbox" name="유지" value="true">아이디저장
+                    </div>
+                    <div class="login_find_right">
+                        <a href="#">아이디찾기</a>
+                        <a href="#"> | 비밀번호찾기</a>
+                    </div>
+                </div>    
+                <div class="login_button1">
+                    <a href="#"><button>로그인</button></a>
+                </div>
+                <div class="login_button2">
+                    <div class="login_button2_naver">
+                        <a href="#"><button>네이버로그인</button></a>
+                    </div>
+                    <div class="login_button2_kakao">
+                        <a href="#"><button>카카오로그인</button></a>
+                    </div>
+                </div>
+                <br>
+                <div class="login_joinbutton">
+                    <a href="#"><button>회원가입</button></a>
+                </div>
+                <div class="login_nologin">
+                        <a href="#">비회원 주문하기</a>
+                        |
+                        <a href="#">비회원 주문조회</a>
+                </div>
+    
+                </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 변수 선언
+        a = 1;          // 권장되지 않는다
+        var b = 2;      // 재할당이 가능하지만, 지역변수의 유효범위가 모호하다
+        let c = 3;      // 다시 할당할 수 있다.
+        const d = 4;    // 대상을 바꿀 수 없다. 재할당이 불가능한 형태
+
+        document.writeln('a : ' + a)    // 브라우저 화면
+        console.log('b : ' + b)         // 브라우저 콘솔창
+        // alert('c : ' + c)               // 팝업창
+
+        // 값을 예외적으로 바꿔야할 경우 let 사용
+        for(let i = 0; i < 5; i++) {    // JAVA : int i = 0; i < 5; i++
+            console.log('i : ' + i)
+        }
+
+        const str = 'hello'         // <input type="text">
+        const num = 10
+        const f1 = 1.2;
+        const arr = [2,7,8,4,6]
+
+        // 지정된 변수의 자료형 확인
+        console.log(typeof(str))    // 문자열
+        console.log(typeof(num))    // 정수
+        console.log(typeof(f1))     // 실수
+        console.log(typeof(arr))    // 배열
+        console.log({arr : arr})    // Map 형식 : key : value
+
+        const arr2 = arr.filter((n) => {return n % 2 == 0})    // 필터의 조건에 해당하는 것만 남겨와서
+        console.log(arr2)                                      // arr2에 적용한다
+
+        const member = {
+            name: '이지은',
+            age: 30,
+            show: function() {  // 함수를 변수에 담는다, 함수의 객체화
+                console.log(member.name + '님의 나이는 ' + member.age + '살입니다')
+                // console.log(this.name + '님의 나이는 ' + this.age + '살입니다') // this : 맴버필드를 찾음
+            }
+        }
+        member.show()
+
+        const test = function() {   // 함수도 객체취급이므로 함수를 대입할 수 있다
+            console.log('test')
+        }
+        test()  // 호출하면 된다
+        console.log(typeof(test))   // 함수의 자료형은 function
+
+    </script>
+    
+</body>
+</html>

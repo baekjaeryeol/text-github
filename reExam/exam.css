@@ -1,0 +1,625 @@
+@charset 'utf-8';
+body, header, nav, main, section, aside {
+    padding: 0;
+    margin: 0;
+}
+header, nav, main, section, aside, div {
+    /* border: 0.5px dashed red; */
+    box-sizing: border-box;
+}
+header > .left > div > img:hover, h5:hover {
+    cursor: pointer;
+}
+header > .left > div > h5 {
+    color: #7b7979;
+    font-weight: bold;
+    font-size: 13px;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.left, .right {
+    display: flex;
+}
+.flex > ul {
+    display: flex;
+    list-style: none;
+    width: 420px;
+    margin: auto;
+    justify-content: space-around;
+}
+.flex > ul > li > a:hover  {
+    border-bottom: 1px solid black;
+}
+.flex > ul > li {
+    font-size: 12px;
+    padding: 0 10px;
+}
+.flex > ul > .border {
+    border-right: 1px solid black;
+}
+header > .right > .ikon {
+    padding: 5px 5px;
+    cursor: pointer;
+}
+header > .right > .banner {
+    padding: 5px 10px;
+    margin: auto;
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    background-color: #0070BD;
+    cursor: pointer;
+    margin-left: 20px;
+    border-radius: 30px;
+}
+header {
+    display: flex;
+    justify-content: space-around;
+    width: 1300px;
+    margin: auto;
+    margin-right: 80px;
+}
+header > div {
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+header > .right {
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
+nav {
+    background-color: #0070BD;
+}
+nav > .wrap {
+    width: 1390px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    cursor: pointer;
+}
+nav > .wrap > .left > ul {
+    display: flex;
+    list-style: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    justify-content: space-around;
+    width: 800px;
+}
+nav > .wrap > .left > ul:hover {
+    cursor: pointer;
+}
+nav > .wrap > .left > ul > li:hover {
+    border-bottom: 1px solid white;
+}
+nav > .wrap > .right > div {
+    align-items: center;
+    padding: 15px 15px;
+}
+.search {
+    border-left: 1px solid #333333;
+}
+.hamburger {
+    font-size: 40px;
+    line-height: 18px;
+    color: white;
+    border-left: 1px solid #333333;
+    border-right: 1px solid #333333;
+}
+nav > .wrap > .left > ul > .left1 {
+    display: flex;
+}
+/* 드랍다운 메뉴 */
+ul > li {
+    box-sizing: border-box;
+}
+nav > .wrap > .left > ul > li > a {
+    padding: 17px 0;
+}
+nav > .wrap > .left {
+    position: relative;
+    display: inline-block;
+}
+ol {
+    display: none;
+    list-style: none;
+    padding: 10px 0;
+    border: 1px solid #333333;
+    position: absolute;
+    margin-top: 15px;
+    margin-left: -25px;
+    background-color: white;
+    text-align: left;
+	width: auto;
+    z-index: 1;
+}
+ol > li {
+    color: #333333;
+    font-size: 12px;
+    font-weight: normal;
+    height: auto;
+    width: auto;
+    padding: 5px 20px;
+
+}
+ul > li:hover > ol {
+    display: block;
+}
+ol > li:hover {
+    background-color: #dedede;
+}
+/* 드랍다운 메뉴 */
+.wrap {
+    width: 760px;
+    margin: auto;
+    display: flex;
+}
+main > section > .wrap > .item > div {
+    overflow: hidden;
+}
+main > section > .wrap > .item > div > a > img {
+    position: relative;
+    transition-duration: 0.3s;
+}
+main > section > .wrap > .item > div > a > img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+main > section > .wrap > .item {
+    margin-top: 20px;
+}
+main > section > .wrap > .item > .wfont{
+    font-weight: bold;
+    font-size: 17px;
+    padding: 5px 0;
+}
+main > section > .wrap > .item > .wfont1{
+    font-weight: bold;
+    font-size: 14px;
+    padding: 5px 2px;
+}
+main > section > .wrap > .item > .wfont1 > a:hover{
+    cursor: pointer;
+    border-bottom: 1px solid black;
+}
+.box {
+    width: 253px;
+    height: 276px;
+}
+
+main > section > .wrap2 {
+    text-align: center;
+    margin: auto;
+    width: 748px;
+    height: 90px;
+    padding-top: 25px;
+    border-top: 0.5px solid #333333;
+    border-bottom: 0.5px solid #333333;
+    background-color: #f8f8f9;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+main > section > .wrap2 > .wrap2_1{
+    font-size: 16px;
+}
+main > section > .wrap2 > .wrap2_2{
+    font-size: 15px;
+    font-weight: bold;
+}
+main > section > .wrap2 > .wrap2_3{
+    font-size: 16px;
+    font-weight: bold;
+    color: orangered;
+}
+main > section > .wrap2 > .wrap2_4{
+    font-size: 13px;
+    font-weight: bold;
+    background-color: #0070BD;
+    color: white;
+    padding: 2px 2px;
+}
+main > section > .wrap3 > .item {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 0;
+    width: 740px;
+    margin: auto;
+}
+main > section > .wrap3 > .item2_1 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 740px;
+    margin: auto;
+}
+main > section > .wrap3 > .item2_1 > .item {
+    overflow: hidden;
+}
+main > section > .wrap3 > .item2_1 > .item > img {
+    position: relative;
+    transition-duration: 0.3s;
+}
+main > section > .wrap3 > .item2_1 > .item > img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+main > section > .wrap3 > .item2_1 > .item > .carname {
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    color: white;
+    top: 710px;
+}
+main > section > .wrap3 > .item2_1 > .item > .carname > .num {
+    font-size: 30px;
+    padding: 0 10px;
+}
+main > section > .wrap3 > .item2_1 > .item > .carname > .num2 > .num2_1 {
+    font-size: 15px;
+    font-weight: bold;
+}
+main > section > .wrap3 > .item2_1 > .item > .carname > .num2 > .num2_2 {
+    font-size: 13px;
+    font-weight: bold;
+}
+main > section > .wrap3 > .item2_1 > .item > .carname2 > .num {
+    font-size: 30px;
+    padding: 0 10px;
+}
+main > section > .wrap3 > .item2_1 > .item > .carname2 > .num2 > .num2_1 {
+    font-size: 15px;
+    font-weight: bold;
+}
+main > section > .wrap3 > .item2_1 > .item > .carname2 > .num2 > .num2_2 {
+    font-size: 13px;
+    font-weight: bold;
+}
+main > section > .wrap3 > .item2_1 > .item > .carname2 {
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    color: white;
+    top: 900px;
+}
+main > section > .wrap3 > .item2_1 > .item > .carname3 > .num {
+    font-size: 30px;
+    padding: 0 10px;
+}
+main > section > .wrap3 > .item2_1 > .item > .carname3 > .num2 > .num2_1 {
+    font-size: 15px;
+    font-weight: bold;
+}
+main > section > .wrap3 > .item2_1 > .item > .carname3 > .num2 > .num2_2 {
+    font-size: 13px;
+    font-weight: bold;
+}
+main > section > .wrap3 > .item2_1 > .item > .carname3 {
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    color: white;
+    top: 1088px;
+}
+main > section > .wrap3 > .item3 {
+    text-align: center;
+    margin: auto;
+    width: 740px;
+    height: 45px;
+    background-color: #f3f3f3;
+    font-size: 15px;
+    font-weight: bold;
+    padding-top: 12.5px;
+    color: #464646;
+}
+main > section > .wrap3 > .item3:hover {
+    cursor: pointer;
+    background-color: #eeeeee;
+}
+
+main > section > .wrap4 > .wrap4_title{
+    width: 745px;
+    padding: 5px 0;
+    margin: auto;
+    margin-top: 20px;
+    font-weight: bold;
+}
+main > section > .wrap4 > .wrap4_ul > ul{
+    display: flex;
+    list-style: none;
+    margin: auto;
+    width: 790px;
+    margin: 10px 0;
+}
+main > section > .wrap4 > .wrap4_ul > ul > li{
+    padding: 3px 7px;
+    font-size: 13px;
+    border: 1px solid rgb(225, 225, 225);
+    margin: 0 2px;
+}
+main > section > .wrap4 > .wrap4_ul > ul > li > a:hover {
+    border-bottom: 1px solid black;
+}
+main > section > .wrap4 > .wrap4_1 {
+    display: flex;
+    flex-wrap: wrap;
+    width: 750px;
+    margin: auto;
+    padding: 2px 2px;
+    box-sizing: border-box;
+}
+main > section > .wrap4 > .wrap4_1 > .item {
+    overflow: hidden;
+}
+main > section > .wrap4 > .wrap4_1 > .item2 {
+    overflow: hidden;
+}
+main > section > .wrap4 > .wrap4_1 > .item > div > img {
+    position: relative;
+    transition-duration: 0.3s;
+}
+main > section > .wrap4 > .wrap4_1 > .item2 > div > img {
+    position: relative;
+    transition-duration: 0.3s;
+}
+main > section > .wrap4 > .wrap4_1 > .item > div > img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+main > section > .wrap4 > .wrap4_1 > .item2 > div > img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+main > section > .wrap4 > .wrap4_1 > .item > div > img {
+    position: relative;
+}
+main > section > .wrap4 > .wrap4_1 > .item > div > span {
+    z-index: 1;
+    position: absolute;
+    top: 1420px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+main > section > .wrap4 > .wrap4_1 > .item2 > div > span {
+    z-index: 1;
+    position: absolute;
+    top: 1620px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+main {
+    display: flex;
+    margin-left: 190px;
+}
+aside {
+    width: 300px;
+    border-left: 1px solid #333333;
+    margin: 20px 0;
+    padding: 0 10px;
+}
+aside > div {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5px;
+}
+aside > .aside0 {
+    border-bottom: 1px solid #949494;
+}
+aside > .aside3 {
+    border-bottom: 1px solid #949494;
+}
+aside > div > .top {
+    font-size: 17px;
+    font-weight: bold;
+    padding: 3px 0;
+}
+aside > div > .top1 {
+    font-size: 12px;
+    color: #949494;
+    padding-top: 10px;
+}
+aside > div > .top1:hover {
+    cursor: pointer;
+}
+aside > .aside1 {
+    padding: 3px 3px;
+    font-size: 13px;
+}
+aside > .aside1 > div:hover {
+    color: rgb(124, 124, 227);
+    border-bottom: #0070BD;
+    cursor: pointer;
+}
+aside > ul {
+    list-style: none;
+    padding: 3px 3px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+aside > ul > li > .num {
+    font-size: 17px;
+    color: dodgerblue;
+}
+aside > ul > li > .text {
+    font-size: 13px;
+}
+aside > ul > li > .dat {
+    font-size: 13px;
+    color: cornflowerblue;
+}
+aside > .aside2 {
+    display: flex;
+    padding: 10px 3px;
+}
+aside > .aside2 > .font {
+    font-size: 13px;
+    font-weight: bold;
+    margin: auto;
+    padding: 0 5px;
+}
+aside > ul > li > .text:hover {
+    cursor: pointer;
+    color: cornflowerblue;
+    border-bottom: 1px solid cornflowerblue;
+}
+aside > .aside2 > .font > a:hover {
+    border-bottom: 1px solid black;
+}
+aside > .gul1, .gul2, .gul3 {
+    font-size: 13px;
+}
+aside > span {
+    font-size: 12px;
+}
+aside > span:hover {
+    border-bottom: 1px solid black;
+    cursor: pointer;
+    color: cornflowerblue;
+}
+aside > .movie {
+    padding: 10px 0;
+    position: relative;
+}
+.movie > img {
+    width: 268px;
+    align-items: center;
+    margin: auto;
+    cursor: pointer;
+}
+.aside4 {
+    border-bottom: 1px solid rgb(165, 165, 165);
+    padding-top: 10px;
+}
+.movietext {
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 770px;
+    right: 270px;
+    text-shadow: 2px 2px 2px #464646;
+    cursor: pointer;
+}
+aside > .blackbox > div > .item > img {
+    width: 134px;
+    height: 100px;
+    cursor: pointer;
+}
+.movietext2 {
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 880px;
+    right: 360px;
+    text-shadow: 2px 2px 2px #464646;
+    cursor: pointer;
+}
+.movietext3 {
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+    position: absolute;
+    top: 880px;
+    right: 215px;
+    text-shadow: 2px 2px 2px #464646;
+    cursor: pointer;
+}
+.aside5 {
+    border-bottom: 1px solid #949494;
+    padding-top: 10px;
+}
+aside > .aside5sp {
+    margin: 10px;
+}
+aside > .aside5sp:hover {
+    color: cornflowerblue;
+}
+.aside6 {
+    display: block;
+}
+.aside6 > .flex {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+.aside6 > .flex > div > img:hover{
+    cursor: pointer;
+}
+footer {
+    border-top: 1px solid rgb(207, 207, 207);
+    border-bottom: 1px solid rgb(207, 207, 207);
+}
+footer > .fwrap {
+    display: flex;
+    justify-content: space-around;
+    width: 1155px;
+    margin: auto;
+}
+footer > .fwrap > div > h4 {
+    margin: 10px 0;
+}
+footer > .fwrap > .item > .num {
+    font-weight: bold;
+    font-size: 18px;
+}
+footer > .fwrap > .item > .text {
+    font-size: 12px;
+}
+footer > div > .img > img {
+    width: 100px;
+    height: 30px;
+}
+footer > .fwrap > .item > .img > img {
+    cursor: pointer;
+}
+footer > div > .img2 > img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}
+footer > .fwrap > .item > .img2 > img:hover {
+    cursor: pointer;
+}
+
+.bottom > .wrapbt > ul {
+    list-style: none;
+    display: flex;
+    margin: auto;
+    width: 800px;
+}
+.bottom > .wrapbt > ul > li {
+    font-size: 11px;
+    padding: 0 10px;
+    margin: 20px 0;
+    border-right: 1px solid black;
+}
+.bottom > .wrapbt > ul > li:hover {
+    border-bottom: 1px solid black;
+    cursor: pointer;
+}
+.bottom > .bt2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.bottom > .bt2 > span {
+    font-size: 12px;
+    color: #9c9c9c;
+}
+.bottom > .bt2 > span > .num {
+    border-bottom: 0.5px solid black;
+}
+.banner2 > img {
+    width: 160px;
+    height: 600px;
+    margin: 20px 10px;
+    position: fixed;
+    position: sticky;
+    top: 40px;
+    cursor: pointer;
+}

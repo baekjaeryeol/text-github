@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            overflow-y: scroll;
+        }
+        body{
+            margin: auto;
+            padding: 10px;
+            overflow: auto;
+            /* border-width: 2px;
+            border-color: red;
+            border-style: solid; */
+        }
+        .top{
+            /* border: solid 1px red; */
+            width: 1200px;
+            height: 79px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header{
+            width: 1280px;
+            flex-flow: wrap;
+            border-bottom: solid 2px red;
+            margin: auto;
+            align-items: center;
+            height: 146px;
+        }
+
+
+        nav{
+            width: 1200px;
+            margin: auto;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .input > input[type="search"]{
+            all: unset;
+            padding: 3px;
+            width: 482px;
+            height: 40px;
+            border: solid 1px rgb(183,183,183);
+            border-radius: 28px;
+            margin: auto;
+            justify-content: space-around;
+            font-size: 15px;
+            background-image: url(search.png);
+            background-position: 95% ;
+            background-repeat: no-repeat;
+            /* box-sizing: border-box; */
+            background-size: 5%;
+        
+        }
+        ul{
+            list-style: none;
+            text-decoration: none;
+        }
+        nav > ul{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* border-bottom: 2px solid red; */
+            
+            
+        }
+        nav > ul > li{
+            display: block;
+            width: 131px;
+            text-align: center;
+            color: black;
+            text-decoration: none;
+        }
+
+
+        #cate{
+            z-index: 1;       
+            width: 149px;
+            height: 50px;
+            display: block;
+            text-align: center;
+            line-height: 52px;
+            position: relative;    
+            background-color: red;
+            /* color: white; */
+            border-width: 1px;
+            border-color: red;
+            border-style: solid;
+            /* padding: 2px 0px 0px 25px; */
+            
+        }
+
+        nav > ul >#cate:hover > .allmenu{
+            
+            display: flex;
+        }
+        .allmenu{
+            position: absolute;     
+            top: 50px;
+            width: 1200px;
+            height: 530px;
+            background-color: white;
+            box-sizing: border-box;
+            display: none;
+            border-width: 1px;
+            border-color: red;
+            border-style: solid;
+        }
+        .allmenu > .left{
+            
+            position: absolute;
+            top: 10px;
+            width: 300px;
+            border: 1px dashed red;
+            display: flex;
+            flex-flow: wrap;  
+            color: black;
+        }
+        #cate > a{
+            color: white;
+        }
+        .top > .right{
+            margin-right: 30px;
+        }
+        .top > .right > a{
+            margin-right: 15px;
+        }
+        nav > ul >#cate > .allmenu{
+            display: none;
+        }
+        .allmenu2{
+            position: absolute;
+            /* top: 50px; */
+            width: 300px;
+            margin-left: 260px;
+            margin-top: -53px;
+            border: 1px dashed red;
+            display: flex;
+            flex-flow: wrap;  
+            color: black;
+        }
+        .allmenu3{
+            position: absolute;
+            /* top: 50px; */
+            width: 300px;
+            margin-left: 300px;
+            margin-top: -469px;
+            border: 1px dashed red;
+            display: flex;
+            flex-flow: wrap;  
+            color: black;
+        }
+
+        .right {
+            display: flex;
+            width: 180px;
+            height: 60px;
+            padding: 0;
+            margin-top: 20px;
+            justify-content: space-between;     
+        }
+
+        .member_img {
+            position: relative;
+        }
+        .member_img > ul > li{
+            display: none;
+            list-style: none;   
+        }
+
+        .member_img:hover > ul > li{
+            display: block;
+            list-style: none;
+            cursor: pointer;
+            text-align: center;
+            font-size: 12px;
+            line-height: 18px;
+            padding: 6px 15px;
+            background-color: #FFFFFF;
+        }
+        .member_img > ul > li:hover > a{
+            color: red;
+        }
+
+        .member_img > ul > li:hover {
+            background-color:rgb(249, 250, 251);
+        }
+
+        .member_img:hover > ul {
+            margin-top: 20px;
+            z-index: 1;
+            position: absolute;
+            top: 50px;
+            left: -35px;
+            background-color: #FFFFFF;
+            margin: 0;
+            padding: 0;
+            box-shadow: rgb(0 0 0 / 20%) 0px 2px 4px 0px;
+            width: 110px;
+            align-items: center;
+        }
+
+
+        .main_img{
+            text-align: center;
+        }
+        .main_img > img {
+            width: 1200px;
+            height: 500px;
+            margin: 15px auto 15px;
+            
+            /* border: 1px dashed green; */
+            
+        }
+        .main_cate {
+            border: none;
+            border-bottom: 2px solid red;
+            color: red;
+        }
+        .list {
+            width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .product {
+            margin: 30px 24px 30px 0;
+            /* border: 1px dashed green; */
+        }
+        .productImg {
+            overflow: hidden;
+        }
+        .productImg > img {
+            width: 374px;
+            height: 374px;
+            /* border: 1px dashed green; */
+            transition-duration: 0.3s;
+        }
+        .productImg > img:hover {
+            transition-duration: 0.3s;
+            transform: scale(1.1);
+        }
+        .productTitle {
+            color: rgb(51, 51, 51);
+            width: 374px;
+            height: 44px;
+            line-height: 1.47;
+            font-size: 15px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: normal;
+            overflow-wrap: break-word;
+        }
+        .priceWrap {
+            width: 374px;
+            /* color: rgb(51, 51, 51); */
+            box-sizing: border-box;
+            font-size: 12px;
+        }
+        .productOrgPrice {
+            display: block;
+            height: 17px;
+            margin: 6px 0px 7px;
+            color: rgb(153, 153, 153);
+            text-decoration: line-through;
+            font-size: 15px;
+        }
+        .productPrice {
+            display: inline-block;
+        }
+        .countDC {
+            margin: 7px 5px 10px 0px;
+            font-size: 27px;
+            font-weight: 600;
+            line-height: 0.59;
+            letter-spacing: -0.68px;
+            color: rgb(254, 6, 5);
+        }
+        .productPrice > strong {
+            font-size: 27px;
+            line-height: 26px;
+        }
+        .priceQty {
+            display: inline-block;
+            padding: 10px 0px 0px 6px;
+            vertical-align: top;
+            color: rgb(102, 102, 102);
+        }
+        .productScore {
+            margin-top: 11px;
+            font-size: 12px;
+            color: rgb(153, 153, 153);
+            line-height: 18px
+        }
+        .productScore > span:nth-child(1) {
+            display: inline-block;
+            margin-right: 3px;
+            vertical-align: top;
+            width: 15px;
+            height: 15px;
+            background-image: url(/project/star2.png);
+            background-repeat: no-repeat;
+            background-position: -3365px -5px;
+        }
+        footer {
+        width: 1200px;
+        margin: auto;
+        }
+        .footer_line {
+            display: flex;
+            width: 1200px;
+            justify-content: space-between;
+            border-top: 1px solid rgb(238, 238, 238);
+            border-bottom: 1px solid rgb(238, 238, 238);
+            color: rgb(102, 102, 102);
+        }
+        .footer_line_left > ul > li > a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .footer_line_left > ul  {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        .footer_line_left > ul > li  {
+            display: inline-block;
+            width: 100px;
+            margin: 0 20px;
+            font-size: 12px;
+        }
+        .footer_line_right {
+            width: 180px;
+            margin-right: 30px;
+            margin-top: 15px;
+            position: relative;
+        }
+        .footer_line_right > a {
+            position: absolute;
+            width: 80px;
+            text-decoration: none;
+            color: rgb(102, 102, 102);
+            font-size: 12px;   
+        }
+        .footer_line_right > a > img {
+            display: block;
+            position: absolute;
+            top: -3px;
+            left: -24px;
+            width: 18px;
+            height: 20px;
+        }
+        .footer_content {
+            margin: 0 150px;
+            display: flex;
+        }
+        .footer_content_left {
+            width: 800px;
+        }
+        .footer_content_left > h2 {
+            padding: 29px 0px 9px;
+            color: rgb(51, 51, 51);
+            font-size: 18px;
+        }
+        .footer_content_left > div:nth-child(1) {
+            display: flex;
+        }
+        .footer_content_left > p {
+            width: 700px;
+            color: #999999;
+            font-size: 12px;
+        }
+        .footer_content_left_item {
+            display: flex;
+            flex-flow: wrap;
+            width: 700px;
+            margin-bottom: -15px;
+        }
+        .footer_content_left_item > p {
+            width: 700px;
+            padding-right: 10px;
+            color: #666666;
+            font-size: 12px;
+        }
+        .footer_content_right {
+            font-size: 12px;
+            width: 250px;
+            margin-top: 43px;
+            padding-left: 40px;
+            border-left: 1px solid rgb(238, 238, 238);
+        }
+        .footer_content_right_item > div {
+            display: flex;
+        }
+        .footer_content_right_item > div > h3 {
+            color: #333333;
+            font-size: 12px;
+        }
+        .footer_content_right_item > div > span {
+            color: rgb(89, 120, 147);
+            margin: auto 12px;
+        }
+        .footer_content_right_item > ul {
+            width: 250px;
+            list-style: none;
+            color: #999999;
+            padding: 0;
+            margin-top: -5px;
+        }
+        .footer_content_right_item > ul > li {
+            margin-top: 5px;
+        }
+        </style>
+</head>
+<body>
+    <header>      
+        <div class="top">   
+            <div class="left">
+                <a href="#"><img src="oneplus.png" width="160px" height="40px"></a>
+            </div>
+            
+            <div class="input">
+                <input type="search" placeholder="  검색어를 입력하세요" >
+            </div>
+            
+            <div class="right">
+                   <div><a href="#"><img src="login.png" width="40px" height="40px"></a></div>
+                   <div class="member_img">
+                        <a href="#"><img src="member.png" width="40px" height="40px"></a>  
+                        <ul> 
+                            <li><a href="#">주문/배송조회</a></li>
+                            <li><a href="#">고객센터</a></li>
+                            <li><a href="#">회원정보</a></li>
+                        </ul> 
+                </div>   
+                <div><a href="#"><img src="cart.png" width="40px" height="40px"></a></div>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li id="cate">
+                    <a href="#">≡ 카테고리</a>
+                    <div class="allmenu">
+                        <div class="left">
+                            <ul>
+                                <li>
+                                    <a href="#">과일</a>
+                                    <ul class="allmenu2">
+                                        <li>
+                                            <ol><a href="#">사과/배</a></ol>
+                                            <ol><a href="#">감귤/만감류</a></ol>
+                                            <ol><a href="#">토마토</a></ol>
+                                            <ol><a href="#">딸기/체리/블루베리</a></ol>
+                                            <ol><a href="#">감/홍시/곶감/밤</a></ol>
+                                            <ol><a href="#">수박/메론/참외</a></ol>
+                                            <ol><a href="#">포도/자두/복숭아</a></ol>
+                                            <ol><a href="#">바나나/파인애플</a></ol>
+                                            <ol><a href="#">오렌지/자몽/레몬</a></ol>
+                                            <ul class="allmenu3">
+                                                <li>
+                                                    <ol><a href="#">배</a></ol>
+                                                    <ol><a href="#">사과</a></ol>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="#">쌀/잡곡</a></li>
+                                <li><a href="#">채소</a></li>
+                                <li><a href="#">견과</a></li>
+                                <li><a href="#">수산물/건어물</a></li>
+                                <li><a href="#">정육/계란</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">신상품</a></li>
+                <li><a href="#">단독특가</a></li>
+                <li><a href="#">베스트</a></li>
+                <li><a href="#">자주구매</a></li>
+                <li><a href="#">택배배송</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+        <div class="main_img"><img src="mainImg.jpeg"></div>
+        <nav>
+            <ul class="main_list">
+                <li><a href="#">전체</a></li>
+                <li><a href="#">신선식품</a></li>
+                <li><a href="#">가공품</a></li>
+                <li><a href="#">생활용품</a></li>
+                <li><a href="#">냉동식품</a></li>
+            </ul>
+        </nav>
+        <div class="list">
+            <div class="product">
+                <div class="productImg"><img src="체리.jpeg"></div>
+                <div class="productInfo">
+                    <div class="productTitle">
+                        항공 직속 체리(미국산) 300G(팩) ㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎㅎ
+                    </div>
+                    <div class="priceWrap">
+                        <div class="productOrgPrice">
+                            <strong>12,990</strong>원
+                        </div>
+                        <div class="productPrice">
+                            <span class="countDC">38%</span>
+                            <strong>7,990</strong>원
+                        </div>
+                        <span class="priceQty">(100G당 2,663.3원)</span>
+                    </div>
+                    <div class="productScore">
+                        <span></span>
+                        <span>4.3(9건)</span> |
+                        <span>월 1,180개 구매</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="productImg"><img src="골드키위.jpeg"></div>
+                <div class="productInfo">
+                    <div class="productTitle">
+                        제스프리 썬 골드키위 8-10입(팩)
+                    </div>
+                    <div class="priceWrap">
+                        <div class="productOrgPrice">
+                            <strong>12,990</strong>원
+                        </div>
+                        <div class="productPrice">
+                            <span class="countDC">30%</span>
+                            <strong>8,990</strong>원
+                        </div>
+                        <span class="priceQty">(1개 당 8,990원)</span>
+                    </div>
+                    <div class="productScore">
+                        <span></span>
+                        <span>4.7(17,242건)</span> |
+                        <span>월 24,528개 구매</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="productImg"><img src="호주청정우.jpeg"></div>
+                <div class="productInfo">
+                    <div class="productTitle">
+                        [호주청정우]곡물먹고 자란 척아이롤 100G/소고기
+                    </div>
+                    <div class="priceWrap">
+                        <div class="productOrgPrice">
+                            <strong>3,090</strong>원
+                        </div>
+                        <div class="productPrice">
+                            <span class="countDC">40%</span>
+                            <strong>1,850</strong>원
+                        </div>
+                        <span class="priceQty">(100G당 1,850원)</span>
+                    </div>
+                    <div class="productScore">
+                        <span></span>
+                        <span>4.6(23,780건)</span> |
+                        <span>월 99,999+개 구매</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product">
+                <div class="productImg"><img src="맥심미니언즈.jpeg"></div>
+                <div class="productInfo">
+                    <div class="productTitle">
+                        동서 맥심 모카골드믹스 미니언즈 기획팩200T (2400G) ㅎㅎㅎㅎㅎ
+                    </div>
+                    <div class="priceWrap">
+                        <div class="productOrgPrice">
+                            <strong></strong>
+                        </div>
+                        <div class="productPrice">
+                            <span class="countDC"></span>
+                            <strong>24,580</strong>원
+                        </div>
+                        <span class="priceQty">(100G당 1,024.2원)</span>
+                    </div>
+                    <div class="productScore">
+                        <span></span>
+                        <span>4.5(221건)</span> |
+                        <span>월 1,022개 구매</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+    <footer>
+        <div class="footer_line">
+            <div class="footer_line_left">
+                    <ul>
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">고객의견함</a></li>
+                        <li><a href="#">입점·제휴문의</a></li>
+                    </ul>
+            </div>
+            <div class="footer_line_right">
+                <a><img src="gps.png"></a>
+                <a href="#">매장찾기</a>
+            </div>
+        </div>
+    
+        <div class="footer_content">
+            <div class="footer_content_left">
+                <h2>원플러스 주식회사</h2>
+                <div class="footer_content_left_item">
+                    <p>대표이사 : OOO</p>
+                    <p>주소 : 부산 해운대구 센텀2로 25 센텀드림월드</p>
+                    <p>사업자등록번호 : 220-81-60348</p>
+                </div>
+                <div class="footer_content_left_item">
+                    <p>통신판매신고번호 : 2016-부산해운대-0451호</p>
+                    <p>주소 : 부산 해운대구 센텀2로 25 센텀드림월드</p>
+                    <p>청소년보호 책임자: 조혜영</p>
+                </div>
+                <p>
+                    사이트 내에는 원플러스(주)에 입점한 개별판매자가 판매하는 상품이 포함되어 있습니다<br>
+                    해당 상품의 경우 원플러스(주)는 통신판매중개자로서 판매 당사자가 아니며, 상품정보 및 거래 등에 대한 책임을 지지 않습니다.
+                </p>
+                <div class="footer_content_left_item">
+                    <p><strong>소비자피해보상보험</strong></p>
+                </div>
+                <p>고객님은 안전거래를 위해 현금 등으로 결제 시 저희 쇼핑몰에서 가입한 구매안전서비스 소비자 피해보상보험 서비스를 이용하실 수 있습니다.</p>
+                <p>Copyright © Oneplus CO.,LTD. All Rights Reserved.</p>
+            </div>
+            <div class="footer_content_right">
+                <div class="footer_content_right_item">
+                    <div>
+                        <h3>고객센터</h3>
+                        <span>1577-3355</span>
+                    </div>
+                    
+                    <ul>
+                        <li>업무시간 : 09시 ~ 22시(명절당일 휴무)</li>
+                        <li>Email : onlinemart@oneplus.co.kr</li>
+                    </ul>
+                </div>
+                <div class="footer_content_right_item">
+                    <div>
+                        <h3>분쟁처리</h3>
+                        <span>1577-3355</span>
+                    </div>
+                    <ul>
+                        <li>Email : onlinemart@oneplus.co.kr</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </footer>
+    
+</body>
+</html>

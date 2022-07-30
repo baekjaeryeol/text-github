@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            overflow: scroll;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            width: 1200px;
+            margin: auto;
+        }
+        ul > li {
+            box-sizing: border-box;
+            border: 1px solid black;
+            width: 150px;
+            text-align: center;
+            font-size: 13.5px;
+            font-weight: bold;
+            height: 45px;
+            line-height: 40px;
+            border-top: 3px solid #00b2cf;
+            background-color: #082531;
+            color: white;
+            cursor: pointer;
+        }
+        ul > li:hover {
+            border-bottom: 3px solid #00b2cf;
+            color: #00b2cf;
+        }
+        ul > li:hover > ol {
+            display: block;
+        }
+        ol {
+            list-style: none;
+            display: none;
+            padding: 0;
+            border: 1px solid #00b2cf;
+            position: absolute;
+            padding: 10px 10px;
+            background-color: #123643;
+            text-align: left;
+        }
+        ol > li {
+            color: white;
+            font-size: 12px;
+            line-height: 12px;
+            height: 20px;
+            font-weight: normal;
+            width: 160px;
+        }
+        ol > li:hover {
+            color: #00b2cf;
+            text-decoration: underline;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+            font-size: inherit;
+        }
+        .new {
+            color: yellow;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        input:focus {
+            background-color: skyblue;
+        }
+        input:hover {
+            background-color: yellow;
+        }
+        input:active {
+            background-color: salmon;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>다른 사이트 드랍다운 메뉴 구현해보기</h1>
+    <hr>
+
+    <nav>
+        <ul>
+            <li><a href="">홈</a></li>
+            <li>
+                <a href="">기록실</a>
+                <ol>
+                    <li><a href="">LoL 기록실 - 경기 기록</a></li>
+                    <li><a href="">LoL 기록실 - 선수 기록</a></li>
+                    <li><a href="">LoL 기록실 - 팀 통산</a></li>
+                    <li><a href="">LoL 기록실 - 선수 통산</a></li>
+                    <li><a href="">LoL 기록실 - 챔피언 픽/밴</a></li>
+                    <li><a href="">LoL 기록실 - 래더 랭킹</a></li>
+                    <li><a href=""><span class="new">new&nbsp;</span> LoL 프로팀 정보</a></li>
+                </ol>
+            </li>
+            <li><a href="">LCK 프랜차이즈</a></li>
+            <li><a href="">챔피언</a></li>
+            <li><a href="">카운터픽</a></li>
+            <li><a href="">공략</a></li>
+            <li><a href="">스킨갤러리</a></li>
+            <li><a href="">방송/영상</a></li>
+            <li><a href="">LoL DB</a></li>
+        </ul>
+    </nav>
+
+    <div class="">
+        <h3>1. 태그 선택자</h3>
+        <p>
+            태그이름 { 속성: 값; }<br>
+            <b>ol { list-style: none; }</b><br>
+            문서 내의 지정한 태그가 모두 적용된다
+        </p>
+
+        <h3>2. 클래스 선택자</h3>
+        <p>
+            .클래스이름 { 속성: 값; }<br>
+            <b>.new { color: yellow; }</b><br>
+            문서 내에서 태그에 상관없이 지정한 클래스에 적용된다
+        </p>
+
+        <h3>3. ID 선택자</h3>
+        <p>
+            #ID이름 { 속성: 값; }<br>
+            <b>#logo { font-size: 40px; }</b><br>
+            문서 내에서 태그에 상관없이 지정한 ID에 적용된다<br>
+            태그에 id를 부여할 때는 문서 전체에서 유일한 이름으로 부여하도록 한다<br>
+            id는 다른 태그와 중복되면 안된다<br>
+        </p>
+
+        <h3>4. 자손 선택자</h3>
+        <p>
+            부모요소 > 자식요소 { 속성: 값; }<br>
+            <b>ol > li { color: white; }</b><br>
+            문서 내에서 특정 부모요소 바로 밑에 속해있는 자식 요소에 적용된다<br>
+            같은 태그이거나, 같은 클래스이더라도, 지정한 부모요소가 일치할 때에만 적용 가능<br>
+        </p>
+
+        <h3>5. 후손 선택자</h3>
+        <p>
+            부모요소 후손요소 { 속성: 값; }<br>
+            <b>nav li { border-bottom: 1px solid black; }</b><br>
+            직계 하위 요소는 아니지만, 단계가 멀리 있더라도, 내부에 속해있으면
+            후손 요소에 속성을 적용할 수 있다
+        </p>
+
+        <h3>6. 조건 선택자</h3>
+        <p>
+            요소:조건 { 속성: 값; }<br>
+            <b>a:hover { text-decoration: underline; }</b><br>
+            특정 요소에 특정 조건을 만족하는 경우에 적용하는 속성이다<br>
+            :active - 마우스 클릭이 눌러져있는 경우에 적용되는 속성<br>
+            :hover - 마우스 포인터가 요소 위에 올라가 있을 때<br>
+            :focus - 클릭하거나 키보드 탭키에 의해서 요소가 선택되어 있는 경우<br>
+            :visited - 방문했던 사이트의 주소인 경우<br>
+            <input>
+            <input>
+        </p>
+
+
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>기초적인 style 속성</h1>
+    <hr>
+    <table border="1" cellpadding="10" cellspacing="0">
+        <tr>
+            <th>속성</th>
+            <th>예시</th>
+            <th>설명</th>
+        </tr>
+        <tr>
+            <td>display</td>
+            <td>display: block</td>
+            <td>
+                요소의 화면 표시 형태를 변경할 수 있다<br>
+                block : 한줄 자리차지, 크기 변경 가능<br>
+                inline : 내용만큼만 자리차지, 크기 변경 불가<br>
+                inline-block : 크기 지정 가능, 한 줄 안에 여러 요소 배치 가능<br>
+                flex : 내부 요소의 정렬을 위한 display 속성. 추가 style을 적용해야 한다<br>
+                none : 요소가 문서에서 시각적으로 사라지며, 자리차지도 없다
+            </td>
+        </tr>
+        <tr>
+            <td>width</td>
+            <td>width: 100px</td>
+            <td>요소의 가로 너비를 지정한다. px, em, rem, % 등으로 표현가능</td>
+        </tr>
+        <tr>
+            <td>height</td>
+            <td>height: 100px</td>
+            <td>요소의 세로 높이를 지정한다. px, em, rem, % 등으로 표현가능</td>
+        </tr>
+        <tr>
+            <td>color</td>
+            <td>color: black; color: #00ffff;</td>
+            <td>
+                기본색(글자색)을 지정한다. 색상이름이나 rgb코드를 사용한다<br>
+                #000, #123456, rgb(0, 255, 255)<br>
+                red, green, blue의 수치를 순서대로 0 ~ 255 사이의 값을 지정한다<br>
+                #으로 시작할 때는 rgb수치를 16진수로 작성 (0 ~ f)
+            </td>
+        </tr>
+        <tr>
+            <td>background-color</td>
+            <td>background-color: salmon</td>
+            <td>배경색을 지정한다. 색상이름이나 rgb코드를 사용한다</td>
+        </tr>
+        <tr>
+            <td>border</td>
+            <td>border: 1px solid black</td>
+            <td>
+                테두리의 두께, 선 형태, 색상을 순서대로 지정한다<br>
+                두께는 px 단위로 지정하면 된다<br>
+                형태는 solid, dotted, double, dashed, none<br>
+                색상은 color 지정 방식과 동일하다<br>
+            </td>
+        </tr>
+        <tr>
+            <td>margin</td>
+            <td>margin: 10px; margin: 20px auto; margin: 5px 10px 5px 5px</td>
+            <td>
+                테두리 바깥 여백을 지정한다<br>
+                4개를 순서대로 작성하면 top -> right -> bottom -> left 순서이다<br>
+                2개를 순서대로 작성하면 상하 -> 좌우 순서이다<br>
+                1개만 작성하면 상하좌우 모두 같은 여백을 적용한다<br>
+            </td>
+        </tr>
+        <tr>
+            <td>padding</td>
+            <td>margin과 사용법은 동일함</td>
+            <td>테두리 안쪽 여백을 지정한다. 테두리와 내용 사이의 여백</td>
+        </tr>
+
+    </table>
+
+    <fieldset>
+        <legend>속성 없는 input</legend>
+        <input>
+    </fieldset>
+
+    <fieldset>
+       <legend>style 적용 input</legend> 
+       <input style="padding: 10px; 
+                     border: none; 
+                     border-bottom: 2px double black;
+                     font-size: 17px;
+                     font-weight: bold;
+                     font-family: '굴림';">
+    </fieldset>
+    
+</body>
+</html>

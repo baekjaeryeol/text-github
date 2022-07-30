@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 별도의 .css 파일로 분리 예정 */
+        .item {
+            width: 300px;
+            height: 240px;
+            background-position: center;
+            background-size: 100% auto;
+            background-repeat: no-repeat;
+        }
+        .wrap {
+            display: flex;
+            width: 1500px; /* 화면은 줄여도 크기는 변하지 않음*/
+        }
+        .slider {
+            width: 300px;
+            height: 240px;
+            border: 3px dashed rebeccapurple;
+            overflow: hidden; /* 테두리를 넘어가면 숨김효과 */
+        }
+        marquee {
+            width: 300px;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        자바스크립트는 트리형
+        자바스크립트는 HTML하나하나를 객체로 취급해서 처리한다 (HTMLElement)
+        -> document.getElementById, nextelementSibling, childNodes 등...
+        (Document Object Model)
+        최상위(window) : root node
+        body의 상위(html) : parent node
+        body의 하위(h1, div...) : child node
+        body -> head : brother node
+        head의 하위(meta, title, style) : leaf node
+     -->
+    <script>
+        // 함수를 정의하는 영역 (별도의 .js 파일로 분리 예정)
+        
+    </script>
+
+    <h1>이미지 슬라이더 (carousel)</h1>
+    <hr>
+
+    <form id="firstForm"></form>
+
+    <div class="slider"></div>
+
+    <script>
+        // 문서 요소를 불러오고 관련 작업을 수행하는 영역
+        const slider = document.querySelector('.slider')
+
+        // 이미지 저장경로를 DB에서 불러온다고 가정
+        // select image from advertisement
+        const arr = [
+            '../img/라이언.jpeg',
+            '../img/풍경.jpeg',
+            '../img/토토로.jpeg',
+            '../img/꽃.jpeg',
+            '../img/검.jpeg',
+        ]
+
+        const wrap = document.createElement('div')
+        wrap.classList.add('wrap')
+
+        for(let i = 0; i < arr.length; i++) {
+            const item = document.createElement('div')
+            item.classList.add('item')
+            item.style.backgroundImage = 'url(' + arr[i] + ')'
+            wrap.appendChild(item)
+        }
+
+        // slider.appendChild(wrap)
+        const marquee = document.createElement('marquee')
+        marquee.appendChild(wrap)
+        slider.appendChild(marquee)
+
+        // 자바 객체형식으로 불러오기 (엘리먼트(요소))
+        // const ob = {
+        //     slider: slider
+        // }
+        // console.log(slider.previousElementSibling)
+        // console.log(ob)
+        // console.log(window)
+
+        // // querySelector()
+        // // querySelectorAll() 함수는 document 가 아닌, 다른 HTMLElement에서도 호출 가능
+
+        // // 특정 태그는 직접 불러올 수 있는 형식이 존재한다
+        // const body = document.body
+        // console.log(body)
+
+        // const firstForm = document.forms[0] // HTML문서에서 forms요소만 따로 빼서 불러올 수 있다
+        // console.log(firstForm)
+    </script>
+
+</body>
+</html>

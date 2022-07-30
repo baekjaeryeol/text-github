@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>정렬</h1>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>나이</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+
+    <script>
+        // tbody에 들어갈 내용
+        const arr = [
+            {name: '짱구', age: 7},
+            {name: '단비', age: 5},
+            {name: '영웅', age: 6},
+            {name: '흰둥이', age: 2},
+            {name: '코난', age: 10},
+        ]
+
+        // 1) arr를 이용하여 table에 데이터를 띄워보기
+        function writeData(arr) {   // 자바스크립트는 매개변수에 타입을 지정하지 않음
+            const tbody = document.querySelector('tbody')
+            let tag = ''
+            for(let i = 0; i < arr.length; i++){
+                tag += '<tr>'
+                tag += '    <td>' + arr[i].name + '</td>'
+                tag += '    <td>' + arr[i].age + '</td>'
+                tag += '</tr>'
+            }
+            tbody.innerHTML = tag
+        }
+
+        writeData(arr)
+
+        // 2) 정렬 함수를 만들고 배열을 반환하게 해서 다시 기록하기
+        function sortByAge(arr) {
+            return arr.sort((a, b) => a.age > b.age ? 1 : -1)
+        }
+        function sortByName(arr) {
+            return arr.sort((a, b) => a.name > b.name ? 1 : -1)
+        }
+        // console.log(arr)
+        // console.log(sortByAge)
+
+        const th2 = document.querySelector('table > thead > tr > th:last-child')
+        th2.onclick = function() {      // th2를 클릭하면
+            writeData(sortByAge(arr))   // arr를 나이로 정렬해서 기록한다
+        }
+        const th1 = document.querySelector('table > thead > tr > th:first-child')
+        th1.onclick = function() {       // th1을 클릭하면
+            writeData(sortByName(arr))   // arr를 이름으로 정렬해서 기록한다
+        }
+        // 내가 원하는 요소를 불러와야 속성을 걸 수 있다
+        // const th1 = document.querySelector('table > thead > tr > th:first-child')
+        // th1.onclick = () => writeData(sortByName(arr))
+        
+    </script>
+    
+</body>
+</html>

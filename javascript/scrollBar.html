@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .root {
+            width: 500px;
+            height: 700px;
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+            overflow-y: scroll; /* 위아래 스크롤바 */
+        }
+        .root::-webkit-scrollbar {
+            /* 스크롤 기능은 되지만 스크롤바를보여주고 싶지 않으면 아래를 활성화 하세요 */
+            display: none;
+        }
+        .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 300px;
+            height: 200px;
+            font-size: 30px;
+            margin: 10px auto;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>스크롤 무한 로딩</h1>
+    <hr>
+
+    <div class="root">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+    </div>
+    
+    <script>
+        function scrollHandler(event) {
+            const ob = {
+                scrollTop: event.target.scrollTop,      // 현재 스크롤 상단 위치
+                clientHeight: event.target.clientHeight,// 화면에 보여지는 높이
+                scrollHeight: event.target.scrollHeight // 스크롤 가능한 전체 높이
+            }
+            const flag = ob.scrollTop + ob.clientHeight >= ob.scrollHeight - 10  // 스크롤해서 일치할 때에만 추가로 불러와라
+            
+            console.log(flag)
+            if(flag) {
+                console.log('추가 !!')  // 나중에 ajax로 불러와서 추가할 수 있다
+                const num = +document.querySelector('.item:last-child').innerText
+                for(let i = num + 1; i < num + 6; i++) {    // offset 기능
+                    const item = document.createElement('div')
+                    item.className = 'item'
+                    item.innerText = i
+                    root.appendChild(item)
+                }
+            }
+        }
+
+        const root = document.querySelector('.root')
+        root.onscroll = scrollHandler
+    
+    </script>
+</body>
+</html>

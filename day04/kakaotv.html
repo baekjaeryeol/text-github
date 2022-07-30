@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px dashed red;
+            padding: 5px;
+        }
+        .root {
+            height: 95vh;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .wrap {            
+            width: 1000px;
+            display: flex;
+            margin: 20px auto;
+            justify-content: space-between;
+        }
+        .footer {
+            width: 1000px;
+        }
+        .right, .left {
+            width: 45%;
+            padding: 10px;
+        }
+        .copyright {
+            text-align: center;
+        }
+        ul {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        a {
+            text-decoration: none;
+            font-size: 12px;
+        }
+        span {            
+            
+        }
+        input {
+            padding: 10px;
+            border: none;
+            border-bottom: 1px solid #8e8e8e ;
+            font-size: 15px;
+            font-weight: bold;
+            width: 300px;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="root">
+
+        <div class="wrap">
+            <div class="left">
+                <img src="kakao.png" width="540">
+            </div>
+
+            <div class="right">
+                <h1 style="margin: 30px;">kakao<h1>                                            
+                    <span><input type="text"
+                                 name="id"
+                                 placeholder="카카오메일 아이디, 이메일, 전화번호"
+                                 autofocus
+                                 required></span><br>
+                    <span><input type="password"
+                                 name="pw"
+                                 placeholder="비밀번호"
+                                 required
+                                 ></span><br>
+                    <span><input type="checkbox" name="auto" size="10px">로그인 상태 유지</span>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="menu">
+                <ul>
+                    <li><a href="">이용약관</a></li>
+                    <li><a href="">개인정보 처리방침</a></li>
+                    <li><a href="">운영정책</a></li>
+                    <li><a href="">고객센터</a></li>
+                    <li><a href="">공지사항</a></li>
+                    <li><a href="">한국어^</a></li>
+                </ul>
+            </div>
+
+            <div class="copyright">
+                copyright
+            </div>
+        </div>
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link type="text/css" rel="stylesheet" href="ex06.css">
+    <script src="ex06.js"></script>
+</head>
+<body>
+    
+    <table id="table">
+        <!-- 
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+         -->
+    </table>
+
+    <script>
+        // 문서 요소에 id가 부여되어 있으면 바로 참조할 수도 있다
+        // 권장되는 방법은 아니다
+
+        // 25개의 td를 5줄에 걸쳐서 5칸씩 넣어주고 싶다
+        // HTMLElement를 생성하는 코드는 document.createElement(태그이름)
+
+        // 창의 내용이 모두 불러와진 후 실행할 이벤트
+        window.onload = makeTable
+
+        // 창 전체에 키를 누르면 발생하는 이벤트
+        window.onkeydown = keydownHandler
+    </script>
+
+</body>
+</html>

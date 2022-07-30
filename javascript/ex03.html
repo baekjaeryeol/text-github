@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // 자바스크립트의 배열
+        // JAVA : int[] arr = {2,7,8,4,6};
+        const arr1 = [2,7,8,4,6]
+        console.log(arr1)
+
+        for(let i = 0; i < arr1.length; i++) {
+            console.log('arr1[1] : ' + arr1[i])
+        }
+        // arr1에 들어가는 숫자 하나하나가 num일때 출력
+        arr1.forEach(num => console.log(num))
+
+        // 가격순, 별점순 등등
+        const arr2 = [2,7,8,4,6]
+        console.log(arr2)
+        arr2.sort()         // 정렬
+        console.log(arr2)
+        arr2.reverse()      // 거꾸로 정렬
+        console.log(arr2)
+
+        // 문자열 배열 정렬도 가능
+        const arr3 = ['정영규', '김지원', '안영재', '우민철', '안재훈']
+        console.log(arr3)
+        arr3.sort()
+        console.log(arr3)
+
+        // 객체의 정렬
+        const arr4 = [
+            {name: '짱구', age: 7},
+            {name: '단비', age: 5},
+            {name: '영웅', age: 6},
+            {name: '흰둥이', age: 2},
+            {name: '코난', age: 10}
+        ]
+        console.log(arr4)
+        arr4.sort((a, b) => a.age > b.age ? 1 : -1)
+        console.log(arr4)
+
+    </script>
+    
+</body>
+</html>

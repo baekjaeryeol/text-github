@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slider {
+            width: 300px;
+            height: 240px;
+            overflow: hidden;
+            border: 1px dashed rebeccapurple;
+        }
+        .wrap {
+            width: 1500px;
+            display: flex;
+            transition-duration: 0.5s; /* 천천히 움직이게 */
+            cursor: pointer;
+        }
+        .item {
+            width: 300px;
+            height: 240px;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+            // 랜덤한 색깔이 나오게 하는 함수
+        function randomColor() {
+        const r = Math.floor(Math.random() * 128) + 128
+        const g = Math.floor(Math.random() * 128) + 128
+        const b = Math.floor(Math.random() * 128) + 128
+        return `rgb(${r}, ${g}, ${b})`   // 백틱 (이클립스에선 안됨)
+        }
+
+        function move(event) {
+            const wrap = document.querySelector('.wrap')
+
+            if(wrap.dataset.flag == 'true') {   // 마우스를 올렸을 때 dataset.flag 가 true 라면
+                return  // 실행을 멈춘다, 아래 코드가 실행되지 않는다
+            }
+            
+            let num = +wrap.dataset.num // + : String -> int, 만들어진 wrap에 dataset.num="0" 을 넣어준다
+            num += 300
+
+            if(num > 1200) { // num이 1200보다 크다면
+                wrap.style.transitionDuration = 'unset' // 실행을 멈추고
+                num = 0 // num의 값을 0
+            }
+            else {  // 아니라면
+                wrap.style.transitionDuration = '0.5s'  // 실행한다
+            }
+
+            wrap.dataset.num = num
+            wrap.style.transform = `translateX(${-num}px)`
+        }
+    </script>
+
+    <h1>숫자 슬라이더</h1>
+    <hr>
+
+    <div class="slider">
+        <div class="wrap" data-num="0">
+            <div class="item">1</div>
+            <div class="item">2</div>
+            <div class="item">3</div>
+            <div class="item">4</div>
+            <div class="item">5</div>
+        </div>
+    </div>
+    <br><br>
+    <button>넘기기</button>
+
+    <script>
+        const itemList = document.querySelectorAll('.item')
+        itemList.forEach(item => item.style.backgroundColor = randomColor())
+
+        const wrap = document.querySelector('.wrap')
+        const btn = document.querySelector('button')
+        btn.onclick = move  // 버튼을 클릭하면 move()함수가 실행된다
+
+        // dataset.flag에다가 false(true)라고 넣는다
+        wrap.onmouseover = () => wrap.dataset.flag = 'true' // wrap에 마우스를 올렸을 때 dataset.flag = 'true' 라는 문자열을 넣어준다
+        wrap.onmouseout = () => wrap.dataset.flag = 'false'
+
+        // 주기적으로 함수를 호출하려면 setInterval(함수, 주기)
+        setInterval(move, 3000) // move 함수를 3초마다 실행한다
+
+    </script>
+    
+</body>
+</html>

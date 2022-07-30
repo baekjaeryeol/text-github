@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 업로드 미리보기</title>
+    <style>       
+        input[name="uploadFile"] {
+            /* border: 1px solid red; */
+            width: 300px;
+            height: 350px;
+        }
+        form#insertForm {
+            position: relative;
+        }
+        #preview {
+            position: absolute;
+            bottom: 0;
+            width: 300px;
+            height: 0;
+            border: 2px solid black;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: auto 100%;
+            margin-top: 20px;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function changeHandler(event) {
+            // event.target 은 파일을 첨부하는 input 요소이다
+            // preview는 미리보기 그림을 보여줄 div 요소이다
+
+            const preview = document.getElementById('preview')
+
+            if(event.target.files && event.target.files[0]) {
+                preview.style.height = '300px'
+                const reader = new FileReader()
+                reader.onload = (e) => { 
+                    preview.style.backgroundImage = `url('${e.target.result}')`
+                }
+                reader.readAsDataURL(event.target.files[0])
+            }
+            else {
+                preview.target.style.backgroundImage = ''
+            }
+        }
+    </script>
+    
+    <h1>이미지 업로드 미리보기</h1>
+    <hr>
+
+    <form id="insertForm" method="POST" enctype="multipart/form-data">
+        <div>
+            <input type="file" name="uploadFile" accept="image/*">
+            <input type="submit">
+        </div>
+        <div id="preview"></div>
+    </form>
+
+    <script>
+        const input = document.querySelector('input[name="uploadFile"]')
+        const preview = document.getElementById('preview')
+        input.addEventListener('change', changeHandler)
+        // 파일을 끌고 가면 높이가 0으로 바뀜
+        preview.addEventListener('dragover', () => preview.style.height = 0)
+    </script>
+</body>
+</html>

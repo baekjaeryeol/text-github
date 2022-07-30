@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border: 3px solid red;
+            border-collapse: collapse;
+        }
+        td, th {
+            padding: 10px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>사용자의 입력을 받는 태그</h1>
+    <hr>
+    <form>  <!--여러 input 및 select, textarea 를 모아서 값을 전달하는 양식 -->
+
+    <table>
+        <thead>
+            <tr>
+                <th>태그</th>
+                <th>결과</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&lt;input type="text"></td>
+                <td><input type="text" name="query"></td>
+                <td>텍스트 기반의 데이터를 입력받는다</td>
+            </tr>
+            <tr>
+                <td>&lt;input type="password"></td>
+                <td><input type="password" name="pw"></td>
+                <td>
+                    텍스트 기반의 데이터를 입력받는다<br>
+                    내용은 가려진다
+                </td>
+            </tr>
+            <tr>
+                <td>&lt;input type="number"></td>
+                <td><input type="number"></td>
+                <td>텍스트 기반의 숫자를 입력받는다</td>
+            </tr>
+            <tr>
+                <td>&lt;input type="date"></td>
+                <td><input type="date"></td>
+                <td>텍스트 기반의 날짜(연월일)를 입력받는다</td>
+            </tr>
+            <tr>
+                <td>&lt;input type="radio"></td>
+                <td>
+                    <input type="radio" name="lang">자바<br>
+                    <input type="radio" name="lang">C<br>
+                    <input type="radio" name="lang">Python<br>
+                </td>
+                <td>
+                    마우스 클릭으로 값을 지정하여 입력받는다 <br>
+                    (같은 이름이면 하나만 선택)
+                </td>
+            </tr>
+            <tr>
+                <td>&lt;input type="checkbox"></td>
+                <td>
+                    <input type="checkbox" name="favorite">소고기<br>
+                    <input type="checkbox" name="favorite">돼지고기<br>
+                    <input type="checkbox" name="favorite">닭고기<br>
+                </td>
+                <td>
+                    마우스 클릭으로 값을 지정하여 입력받는다 <br>
+                    (같은 이름이여도 여러개 선택 가능)
+                </td>
+            </tr>
+            <tr>
+                <td>&lt;input type="range"></td>
+                <td>
+                    <input type="range" name="vol" min="0" max="100">
+                </td>
+                <td>
+                    일정 범위 내에서 마우스로 선택한 수치를 전달한다
+                </td>
+            </tr>
+            <tr>
+                <td>&lt;textarea>&lt;/textarea></td>
+                <td>
+                    <textarea placeholder="글을 입력하세요"
+                              rows="5"
+                              cols="20"></textarea>
+                </td>
+                <td>
+                    여러 줄을 처리할 수 있는 형식의 텍스트 입력
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &lt;select>...<br>
+                        &lt;option>&lt;/option><br>
+                    &lt;/select>
+                </td>
+                <td>
+                    <select name="area">
+                        <option value="">===지역을 선택하세요===</option>
+                        <option value="서울">서울</option>
+                        <option value="부산">부산</option>
+                        <option value="마산">마산</option>
+                        <option value="울산">울산</option>
+                        <option value="포항">포항</option>
+                        <option value="진주">진주</option>
+                    </select>
+                </td>
+                <td>
+                    준비된 목록 중에서 하나를 골라서 전달한다
+                </td>
+            </tr>
+            <tr>
+                <td>&lt;input type="submit"></td>
+                <td><input type="submit"></td>
+                <td>form 내부의 데이터를 특정 주소로 제출한다</td>
+            </tr>
+        </tbody>
+    </table>
+
+    </form>
+</body>
+</html>

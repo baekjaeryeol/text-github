@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            /* overflow: scroll; */
+            /* height: 100vh; */
+        }
+        a {
+            display: block;
+            color: inherit;
+            text-decoration: none;
+        }
+        a:hover {
+            color: #aaa;
+        }
+        div {
+            /* border: 1px dashed red; */
+        }
+        .top, .middle, .bottom {
+            width: 100%;
+        }
+        .top {
+           
+        }
+        .border1 {
+            border-top: 1px solid #dadada;
+            border-bottom: 1px solid #dadada;
+            background-color: white;
+        }
+        .wrap {
+            width: 1260px;
+            margin: 0 auto;
+        }
+        .sb {
+            display: flex;
+            justify-content: space-between;
+        }
+        .ce {
+            display: flex;
+            justify-content: center;
+        }
+        .left, .right {
+            margin: 10px 0;
+            display: flex;
+        }
+        .left > a,
+        .right > a {
+            margin-right: 15px;
+        }
+        h1 {
+            width: 200px;
+            display: flex;
+            justify-content: space-around;
+        }
+        .icon {
+            border-radius: 50%;
+            width: 27px;
+            height: 27px;
+            background-color: #dadada;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        
+        .facebook {
+            font-weight: bold;
+        }
+        .facebook:hover {
+            background-color: rgb(0, 119, 255);
+        }
+        .youtube:hover {
+            background-color: red;
+        }
+        .instagram:hover {
+            background: linear-gradient(to right, orange, purple);
+        }
+        .input {
+            border: 2px solid #dadada;
+        }
+        .input > input[type="search"] {
+            all: unset;
+            padding: 3px;
+        }
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+        ul > li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #hamburger {
+            z-index: 1;  /* allmenu가 가려지면 안되기때문에 상위 요소에 z-index를 부여함 */
+            border-left: 1px solid #dadada;  
+            border-right: 1px solid #dadada;  
+            width: 50px;
+            height: 50px;
+            font-size: 40px;
+            display: block;
+            text-align: center;
+            line-height: 40px;
+            position: relative;     /* 여기를 기준으로 */
+        }
+        #hamburger:hover {
+            background-color: black;
+            color: white;
+        }
+        div.allmenu {
+            position: absolute;     /* 위치를 지정한다 */
+            top: 50px;
+            width: 1260px;
+            height: 400px;
+            background-color: white;
+            border: 2px solid #aaa;
+            box-sizing: border-box;
+            display: none;
+            color: black;
+            font-size: 14px;
+        }
+        #hamburger:hover > div.allmenu {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        #st1 {
+            position: sticky;
+            top: 0;
+        }
+        #st2 {
+            position: sticky;
+            top: 42px;
+        }
+        .allmenu > .left {  /* 구체적으로 명시한 선택자가 더 우선순위가 높다 */
+            width: 75%;
+            display: flex;
+            flex-flow: wrap;    /* 지정된 너비를 넘어선다면 다음 줄에 아이템을 배치 */
+            border: 1px dashed red;
+        }
+        .allmenu > .left > ul {
+            border: 1px dashed blue;
+            width: 170px;
+            /* height: 150px; */
+            margin-top: 15px;
+            margin-right: 15px;
+        }
+        .allmenu > .left > ul > li:first-child {
+            background-color: #dadada;
+            font-weight: bold;
+        }
+        .allmenu > .right {
+            width: 20%;
+            border: 1px dashed red;
+        }
+        div.allmenu ul {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="st1" class="border1">       <!--border1: width: 100%;   -->
+        <div class="wrap sb">   <!--wrap: width: 1260px;    -->
+            <div class="left">
+                <a href="#">LOGIN</a>
+                <a href="#">JOIN US</a>
+                <a href="#">CART</a>
+                <a href="#">ORDER</a>
+                <a href="#">MY PAGE</a>
+                <a href="#">BOOKMARK</a>
+            </div>
+            <div class="right">
+                <a href="#">공지사항</a>
+                <a href="#">이벤트</a>
+                <a href="#">상품문의</a>
+                <a href="#">상품후기</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="top">
+        <div class="wrap ce">
+            <h1><a href="">I T B A N K</a></h1>
+        </div>
+        <div class="wrap sb">
+            <div class="left">
+                <a href="#"><span class="icon facebook">f</span></a>
+                <a href="#"><span class="icon instagram">📷</span></a>
+                <a href="#"><span class="icon youtube">▶</span></a>
+            </div>
+            <div class="right">
+                <div class="input">
+                    <input type="search">🔍
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="st2" class="border1">
+        <div class="wrap ce">
+            <ul>
+                <li id="hamburger">
+                    <a href="#">≡</a>
+                    <div class="allmenu">
+                        <div class="left">
+                            <ul>
+                                <li>submenu</li>
+                                <li>submenu</li>
+                                <li>submenu</li>
+                            </ul>
+                            <ul>
+                                <li>submenu</li>
+                                <li>submenu</li>
+                                <li>submenu</li>
+                                <li>submenu</li>
+                                <li>submenu</li>
+                            </ul>
+                            <ul>
+                                <li>submenu</li>
+                                <li>submenu</li>
+                            </ul>
+                            <ul></ul>
+                            <ul></ul>
+                            <ul></ul>
+                            <ul></ul>
+                            <ul></ul>
+                        </div>
+                        <div class="right">
+
+                        </div>
+                    </div>
+                </li>
+                <li><a href="#">NEW 5%</a></li>
+                <li><a href="#">남성의류</a></li>
+                <li><a href="#">SALE</a></li>
+                <li><a href="#">아우터</a></li>
+                <li><a href="#">탑</a></li>
+                <li><a href="#">드레스</a></li>
+                <li><a href="#">바텀</a></li>
+                <li><a href="#">악세사리</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="middle">
+        <div class="wrap ce">
+            <img src="ex04_banner.jpg">
+        </div>
+    </div>
+
+    <div class="bottom">
+        <br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br>
+    </div>
+
+</body>
+</html>

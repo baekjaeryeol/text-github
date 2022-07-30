@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul, ol { /* ul, ol 태그가 공통으로 갖는 속성*/
+            padding: 0;
+            list-style: none;
+        }
+        li { /* li가 갖는 속성 */
+            width: 120px;
+            height: 50px;
+            line-height: 50px; /* 상자 안에 글자 배치 할때 */
+            text-align: center; /* 상자 안에 글자를 가운데 배치 */
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+            display: inline-block; /* 한줄에 블럭 배치 */
+            cursor: pointer;
+
+            position: relative; /* 하위 absolute의 기준점이 되기 위해 지정했음 */
+        }
+        li:hover {  /* li에 마우스를 올렸을 때 */
+            background-color: lightpink;    /* 배경색은 lightpink */
+            text-decoration: underline;       /* 글자꾸밈은 밑줄 */  
+        }
+
+        ol {
+            position: absolute;
+            /* 주변요소와 상관없이 자신만의 고유한 절대위치를 가지게 된다 */
+            /* 자신의 상위 요소 중, position이 기본값(static)이 아닌 요소 (없으면 body) */
+
+            top: 50px;     /* 특정 위치를 기준으로, 상단위치는 50 */
+            left: 0px;
+
+            display: none;  /* 보이지도 않고, 자리차지도 없다 */
+        }
+        ul > li:hover > ol { /* ul 을 포함하고 li:hover 밑에 ol에 대해서*/
+            display: block; /* block 처리 한다, 밑으로 블럭 지정 */
+        }
+
+        a {
+            color: inherit; /* 기본색으로 지정, 상위요소에 color속성이 있으면 상속받음 */
+            text-decoration: none;  /* 글자꾸밈요소(underline)를 제거한다 */
+        }
+        a:hover {           /* 마우스를 올린 경우에는 */
+            text-decoration: underline; /* 밑줄이 나타난다 */
+        }
+
+        .banner {
+            width: 120px;
+            height: 500px;
+            background-color: lightgoldenrodyellow;
+
+            position: fixed;
+            right: 50px;
+            bottom: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>드랍다운 메뉴</h1>
+    <hr>
+    <a href="#">링크</a>
+
+    <div class="banner">
+        광고 받습니다
+    </div>
+
+
+    <div>
+        <ul>
+            <li>
+                <span>Menu1</span>
+            </li>
+            <li>
+                <span>Menu2</span>
+                <ol>
+                    <li>SubMenu1</li>
+                    <li>SubMenu2</li>
+                    <li>SubMenu3</li>
+                    <li>SubMenu4</li>
+                </ol>
+            </li>
+            <li>
+                <span>Menu3</span>
+            </li>
+        </ul>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>
+</html>

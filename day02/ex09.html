@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul, ol {
+            padding: 0;
+            list-style: none;
+        }
+        
+        ul > li {
+            display: inline-block;
+            width: 120px;
+            height: 50px;
+            background-color: lightcyan;
+            /* position: relative; */
+        }
+        ul > li > .sub {
+            position: absolute;
+            top: 60px;
+            left: 10px;
+            width: 500px;
+            height: 400px;
+            background-color: lightpink;
+            display: none;
+        }
+        ul > li:hover > .sub {
+            display: block;
+        }
+        ol {
+            display: inline-block;
+            width: 150px;
+            height: 300px;
+            border: 1px dashed #999999;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <ul>
+        <li>
+            <span>Menu1</span>
+            <div class="sub">
+                <ol>
+                    <li><span>Submenu1</span></li>
+                    <li><span>Submenu2</span></li>
+                    <li><span>Submenu3</span></li>
+                </ol>
+                <ol>
+                    <li>a</li>
+                    <li>b</li>
+                    <li>c</li>
+                </ol>
+                <ol>
+                    <li>d</li>
+                    <li>e</li>
+                    <li>f</li>
+                </ol>
+            </div>
+        </li>
+        <li>
+            <span>Menu2</span>
+            <div class="sub">
+                <ol>
+                    <li><span>Submenu4</span></li>
+                    <li><span>Submenu5</span></li>
+                    <li><span>Submenu6</span></li>
+                    <li><span>Submenu7</span></li>
+                </ol>
+            </div>
+        </li>
+        <li>
+            <span>Menu3</span>
+            <div class="sub">
+                <ol>
+                    <li><span>Submenu8</span></li>
+                    <li><span>Submenu9</span></li>
+                </ol>
+            </div>
+        </li>
+    </ul>
+
+</body>
+</html>

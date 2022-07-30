@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* style에서 class로 지정할 때는 .뒤에 클래스이름을 작성한다 */
+        .red, .green, .blue {       /* red, green, blue 클래스에 공통으로 적용되는 것들*/
+            width: 100px;           /* 너비 */
+            height: 100px;          /* 높이 */
+            display: inline-block;  /* 블럭 형태로 한줄에 표시*/
+        }
+        .red {
+            background-color: red; /* red 클래스의 배경색은 빨강 */
+        }
+        .green {
+            background-color: green;
+        }
+        .blue {
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>html class 활용</h1>
+    <hr>
+
+    <div class="wrap">
+        <div class="red"></div>
+        <div class="red"></div>
+        <div class="red"></div>
+    </div>
+
+    <div class="wrap">
+        <div class="green"></div>
+        <div class="green"></div>
+        <div class="green"></div>
+    </div>
+
+    <div class="wrap">
+        <div class="blue"></div>
+        <div class="blue"></div>
+        <div class="blue"></div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div.wrap { /* wrap 클래스의 내용을 바꾼다 */
+            text-align: center;     /* 글자 정렬을 가운데로 지정했음 */
+        }
+        ul { /* ul 안에 쓴 내용을 바꾼다 */
+            display: inline-block;  /* 요소를 글자처럼 취급 */
+            padding: 0;     /* 수치가 0이라면 단위가 필요 없다 */
+        }
+        li { /* li 안의 내용 하나가 갖는 style */
+            width: 145px;
+            height: 42px;
+            /* border: 1px solid black; */
+            border: 0;
+            border-top: 4px solid #b20000;
+            display: inline-block;
+            margin-right: -6.5px;
+            
+            /* 글자 속성 */
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;     /* 내부 글자의 좌우 가운데 정렬 */
+            line-height: 38px;      /* 한 줄의 크기는 42px이므로 글자 상하 정렬 */ 
+            
+            background-color: #250706;
+            color: #e2aaaa;
+
+            cursor: pointer;    /* 마우스 모양 */
+
+            box-sizing: border-box; /* margin + border => 크기 */
+        }
+        li:hover {      /* 지정한 요소에 마우스가 올라갔을 때의 속성 */
+            background-color: #550606;
+            color: #e9c964;
+            border-bottom: 4px solid #e9c964;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>다른 사이트의 상단 메뉴 따라서 구현해보기</h1>
+    <hr>
+
+    <div class="wrap">
+        <ul>
+            <li>홈</li>
+            <li>아이템 DB</li>
+            <li>스킬 시뮬레이터</li>
+            <li>거래소</li>
+            <li>퀘스트 가이드</li>
+            <li>TC 정보</li>
+            <li>큐빙 공식</li>
+        </ul>
+    </div>
+
+    
+</body>
+</html>

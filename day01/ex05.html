@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>table</h1>
+    <hr>
+    <fieldset>
+        <legend>table 및 관련 태그와 속성</legend>
+        <ul>
+            <li>
+                table : 표를 작성할 때 사용하는 태그
+                <ul>
+                    <li>width : 가로 너비</li>
+                    <li>height : 세로 높이</li>
+                    <li>border : 테두리</li>
+                    <li>bgcolor : 배경색</li>
+                    <li>align : 테이블 자체 정렬 (문서 내에서 테이블의 위치)</li>
+                    <li>valign : 수직 정렬 (top, middle, bottom)</li>
+                    <li>cellpadding : 한 칸과 내용과의 간격</li>
+                    <li>cellspacing : 각각 칸 끼리의 간격</li>
+                </ul>
+                <br>
+            </li>
+            <li>
+                tr : table row cell, 한 줄을 표현하는 태그
+                <ul>
+                    <li>width : 행의 가로 너비</li>
+                    <li>height : 행의 세로 높이</li>
+                    <li>bgcolor : 배경색</li>
+                    <li>align : 행의 수평 정렬 (내부 내용)</li>
+                    <li>valign : 행의 수직 정렬</li>
+                </ul>
+                <br>
+            </li>
+            <li>
+                td : table data cell, 한 칸을 표현하는 태그, 줄 안에 배치되어야 한다
+                <ul>
+                    <li>width : 셀의 가로 너비</li>
+                    <li>height : 셀의 세로 높이</li>
+                    <li>bgcolor : 배경색</li>
+                    <li>align : 셀의 수평 정렬 (내부 내용)</li>
+                    <li>valign : 셀의 수직 정렬</li>
+                    <li>colspan : 지정된 열의 수 만큼 합치기 (가로 확장)</li>
+                    <li>rowspan : 지정된 행의 수 만큼 합치기 (세로 확장)</li>
+                </ul>
+                <br>
+            </li>
+            <li>th : table header cell, td와 비슷하지만 굵게 처리되며 가운데 정렬된다</li>
+        </ul>
+    </fieldset>
+
+    <fieldset>
+        <legend>예시1</legend>
+        <table border="1" 
+               cellspacing="0"
+               cellpadding="10">
+            <tr>
+                <th>이름</th>
+                <th>나이</th>
+            </tr>
+            <tr>
+                <td>이지은</td>
+                <td>30</td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <fieldset>
+        <legend>예시2</legend>
+        <table border="1" 
+               cellpadding="10" 
+               cellspacing="0"
+               align="center"
+               width="80%">
+            <tr>
+                <td colspan="2">1</td>
+                <!-- <td>2</td> -->
+                <td rowspan="2">3</td>
+            </tr>
+            <tr>
+                <td colspan="2" rowspan="2">4</td>
+                <!-- <td>5</td> -->
+                <!-- <td>6</td> -->
+            </tr>
+            <tr>
+                <!-- <td>7</td> -->
+                <!-- <td>8</td> -->
+                <td bgcolor="#9999ff">9</td>
+            </tr>
+        </table>
+    </fieldset>
+    
+</body>
+</html>

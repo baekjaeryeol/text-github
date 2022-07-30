@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            border: 1px solid black;
+            width: 300px;
+            height: 300px;
+            margin: 20px;
+            display: flex;
+        }
+        .item {
+            background-color: lightgoldenrodyellow;
+            box-sizing: border-box;
+            border: 1px solid chocolate;
+            font-size: 20px;
+            font-weight: 500;
+            text-align: center;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>flex 정렬 방식</h1>
+    <hr>
+    <fieldset>
+    <br>display: flex
+    <br>
+    <br>중심축(main axis)과 교차축(cross axis)이 만들어지고
+    <br>각각의 축을 기준으로 정렬을 수행한다
+    <br>중심축의 방향이 가로선일 수도 있고, 세로선 일수도 있다
+    <br>(기본값은 가로, flex-flow: row)
+    <br>
+    <br>중심축이 row라면, 교차축은 column이기 때문에
+    <br>flex만 걸려있는 상태에서도 상하 정렬을 수행할 수 있다
+    </fieldset>
+
+    <fieldset>
+    justify-contents: flex-start (중심축 기준 정렬)<br>
+    align-items: flex-start (교차죽 기준 정렬)
+
+    <div class="box" style="justify-content: flex-start;
+                            align-items: flex-start;">
+        <div class="item"></div>
+    </div>
+    </fieldset>
+
+    <div class="box" style="justify-content: center;
+                            align-items: flex-start;">
+        <div class="item"></div>
+    </div>
+
+    <div class="box" style="justify-content: flex-end;
+                            align-items: flex-start;">
+        <div class="item"></div>
+    </div>
+
+    <hr>
+    <div class="box" style="justify-content: flex-start;
+                            align-items: flex-start;">
+        <div class="item"></div>
+    </div>
+
+    <div class="box" style="justify-content: flex-start;
+                            align-items: center;">
+        <div class="item"></div>
+    </div>
+
+    <div class="box" style="justify-content: flex-start;
+                            align-items: flex-end;">
+        <div class="item"></div>
+    </div>
+    
+
+</body>
+</html>

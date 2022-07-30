@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- 함수 정의 스크립트 -->
+    <script>
+        async function selectAll() {
+            const url = 'http://127.0.0.1:5500/homeScript/kyochon.html'
+            const menuList = await
+            fetch(url)
+            .then(resp => resp.json())
+            return menuList
+        }
+    </script>
+
+    <nav>
+        <ul>
+            <li class="selected">select</li>
+            <li class="insert">insert</li>
+            <li class="update">update</li>
+            <li class="delete">delete</li>
+        </ul>
+    </nav>
+
+    <div id="root">
+        <div class="select selected">
+
+        </div>
+
+        <div class="insert">
+
+        </div>
+
+        <div class="update">
+
+        </div>
+
+        <div class="delete">
+
+        </div>
+    </div>
+    
+</body>
+</html>
